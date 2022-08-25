@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To do List</title>
+    <link rel="stylesheet" href="./style/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+
+<body>
+    <main class="conteudo" id="conteudo">
+        <header>
+            <h1>To Do List</h1>
+        </header>
+        <div class="topo" id="topo">
+            <input type="text" class="novaTarefa" id="novaTarefa" placeholder="Insira uma tarefa">
+            <button type="button" id="btnAdicionar">
+                <i class="fa fa-plus"></i>
+            </button>
+        </div>
+        <ul class="listaDeTarefa" id="listaDeTarefa">
+        </ul>
+    </main>
+    <div id="popUp" class="popUp">
+        <button id="btnFecharPopUp">
+            <i class="fa fa-remove"></i>
+        </button>
+        <h2 id="idTarefaEditar">Id tarefa #1010</h2>
+        <hr>
+        <form action="#">
+            <div class="txtLinha">
+                <label for="nome">Nome</label>
+                <input type="text" id="inputNomeTarefaEditada">
+            </div>
+            <div class="txtLinha">
+                <button id="atualizarTarefa">Salvar</button>
+            </div>
+        </form>
+    </div>
+    <div class="janelaEdicaoFundo"> </div>
+    <script src="script/script.js"></script>
+</body>
+
+</html>
