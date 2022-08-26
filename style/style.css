@@ -26,6 +26,7 @@ main {
     padding: 5em;
     padding-top: 2em;
     width: 100%;
+  min-width:700px; /*até colocarar responsividade*/
     border-radius: 10px;
     border: 1px solid #000;
     background-color: #2b2a2a;
@@ -34,6 +35,12 @@ main {
 ul,
 li {
     list-style: none;
+}
+hr{
+    position: relative;
+    top: 15px;
+    left: 10px;
+    width: 95%;
 }
 
 div.topo {
@@ -89,7 +96,8 @@ ul li .tarefa {
     background-color: #191818;
     border: 1px solid #2f2e2e;
     border-radius: 10px;
-    width: 60%;
+    width: 50%;
+  min-width: 300px;
     z-index: 9999;
     display: none;
 }
@@ -112,10 +120,25 @@ ul li .tarefa {
     display: block !important;
 }
 #btnFecharPopUp {
-    position: fixed;
-    top: 0;
-    right: 0;
-    padding: 10px;
+     position: fixed;
+    top: 0px;
+    right: 0px;
+    padding: 7px;
+    background: #2f2e2e;
+    color: #fff;
+    font-size: 1em;
+    border: none;
+    border-radius: 5px;
+
+ 
+}
+#btnFecharPopUp:hover{
+  cursor:pointer;
+}
+#idTarefaEditar{
+  position: relative;
+    top: 5px;
+    left: 10px;
 }
 form {
     width: 100%;
