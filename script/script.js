@@ -34,6 +34,7 @@ btnFecharPopUp.addEventListener('click', (e)=>{
     abrirEdicao();
 })
 
+
 // evento quando botao de adicionar tarefa é adicionado
 btnAdicionar.addEventListener('click', (e) => {
 
@@ -47,8 +48,11 @@ btnAdicionar.addEventListener('click', (e) => {
     }
 });
 
+// evento quando botao de Salvar tarefa é acionado, na edição de uma tarefa
+// evento quando botao de Salvar tarefa é acionado, na edição de uma tarefa
 atualizarTarefa.addEventListener('click', (e) => {
-    // previnindo ação padrao do botão. Para que ao cliclar não seja submetido os dados 
+   alert("Salvar Acionado");
+  // previnindo ação padrao do botão. Para que ao cliclar não seja submetido os dados 
     // para a mesma pagina. 
     e.preventDefault()
     let idTarefaEdit = idTarefaEditar.innerHTML.replace('#', "");
@@ -56,10 +60,18 @@ atualizarTarefa.addEventListener('click', (e) => {
         nome: inputNomeTarefaEditada.value,
         id: id
     }
-    if (novaTarefa.value != "") {
-        // addTarefa(task);
-    }
-})
+    
+    let novaTask = document.getElementById(''+id+'');
+  
+
+      let li = criarConjuntoDeTagDentroDaLi(objTarefa)
+      listaDeTarefa.replaceChild(li, novaTask);
+    
+      abrirEdicao();
+ 
+});
+
+
 
 // função de adicionar tarefa, que recebe como parametro o objeto task
 const addTarefa = (task) => {
@@ -107,7 +119,8 @@ function editarTarefa(id) {
 
     let li = document.getElementById(`${id}`);
     if (li) {
-        idTarefaEditar.innerHTML = `# ${id}`
+        idTarefaEditar.innerHTML = `# ${id}`;
+        inputNomeTarefaEditada.value = li.innerText;
         abrirEdicao()
     }
 }
@@ -122,7 +135,6 @@ function excluirTarefa(id) {
         }
     }
 }
-
 function abrirEdicao() {
     popUp.classList.toggle('abrir');
     janelaEdicaoFundo.classList.toggle('abrir');
