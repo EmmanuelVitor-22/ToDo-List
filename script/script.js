@@ -8,6 +8,7 @@ let janelaEdicaoFundo = document.querySelector('.janelaEdicaoFundo');
 let atualizarTarefa = document.querySelector('#atualizarTarefa');
 let idTarefaEditar = document.querySelector('#idTarefaEditar');
 let inputNomeTarefaEditada = document.querySelector('#inputNomeTarefaEditada');
+let btnFecharPopUp = document.querySelector('#btnFecharPopUp');
 
 
 // eventeo para "ouvir" quando qualquer tecla for pressionada
@@ -27,7 +28,11 @@ novaTarefa.addEventListener('keypress', (e) => {
     }
 });
 // Funcão para gerar numero de ID de forma randomica.
-let gerarIdRandomico = () => Math.floor(Math.random() * 2000)
+let gerarIdRandomico = () => Math.floor(Math.random() * 2000);
+
+btnFecharPopUp.addEventListener('click', (e)=>{
+    abrirEdicao();
+})
 
 // evento quando botao de adicionar tarefa é adicionado
 btnAdicionar.addEventListener('click', (e) => {
@@ -99,7 +104,7 @@ const criarConjuntoDeTagDentroDaLi = (task) => {
 }
 
 function editarTarefa(id) {
-    alert(id);
+
     let li = document.getElementById(`${id}`);
     if (li) {
         idTarefaEditar.innerHTML = `# ${id}`
